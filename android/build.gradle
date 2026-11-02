@@ -1,0 +1,61 @@
+group 'com.huawei_remote_config'
+version '1.0'
+
+buildscript {
+    ext.kotlin_version = '2.2.21'
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://developer.huawei.com/repo/' }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.13.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://developer.huawei.com/repo/' }
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    namespace 'com.huawei_remote_config'
+
+    compileSdk 36
+
+    defaultConfig {
+        minSdkVersion 21
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+
+dependencies {
+    // Huawei AppGallery Connect Remote Config — the native SDK this plugin
+    // wraps. The consuming app still needs to apply the `com.huawei.agconnect`
+    // Gradle plugin and ship `agconnect-services.json` itself (see README) —
+    // AGC reads its project configuration from the application module, not
+    // from a library.
+    implementation 'com.huawei.agconnect:agconnect-remoteconfig:1.9.1.300'
+    // Pulled in transitively by agconnect-remoteconfig, but declared
+    // explicitly because the plugin reads AGConnectServicesConfig directly
+    // (see the `diagnostics` method) and must not depend on another module's
+    // transitive graph for a compile-time class.
+    implementation 'com.huawei.agconnect:agconnect-core:1.9.1.300'
+}

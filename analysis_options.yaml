@@ -1,0 +1,60 @@
+# Additional information about this file can be found at
+# https://dart.dev/guides/language/analysis-options
+
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - "**/build/**"
+    - "**/.dart_tool/**"
+    - "**/.flutter-plugins"
+    - "**/.flutter-plugins-dependencies"
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "**/*.mocks.dart"
+    - "**/*.gr.dart"
+    - "**/*.config.dart"
+    - "**/*.gen.dart"
+    - "**/generated/**"
+
+  errors:
+    deprecated_member_use_from_same_package: warning
+    always_declare_return_types: warning
+    avoid_print: warning
+    avoid_void_async: warning
+    directives_ordering: warning
+    join_return_with_assignment: warning
+    prefer_relative_imports: warning
+    prefer_single_quotes: warning
+    sized_box_shrink_expand: warning
+    sort_constructors_first: warning
+    unnecessary_lambdas: warning
+    unnecessary_parenthesis: warning
+    unnecessary_raw_strings: warning
+    use_colored_box: warning
+    use_decorated_box: warning
+    unnecessary_underscores: warning
+    prefer_const_constructors: info
+    prefer_const_literals_to_create_immutables: info
+    prefer_const_declarations: info
+
+linter:
+  rules:
+    always_declare_return_types: true
+    avoid_print: true
+    avoid_void_async: true
+    directives_ordering: true
+    join_return_with_assignment: true
+    prefer_relative_imports: true
+    prefer_single_quotes: true
+    sized_box_shrink_expand: true
+    sort_constructors_first: true
+    unnecessary_lambdas: true
+    unnecessary_parenthesis: true
+    unnecessary_raw_strings: true
+    use_colored_box: true
+    use_decorated_box: true
+    unnecessary_underscores: true
+
+formatter:
+  page_width: 120
