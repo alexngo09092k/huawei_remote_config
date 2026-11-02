@@ -3,9 +3,9 @@ description: >-
   Flutter plugin for Huawei AppGallery Connect Remote Config
   (AGConnectConfig). Android-only.
 version: 1.0.0
-homepage: https://github.com/sinelser/huawei_remote_config
-repository: https://github.com/sinelser/huawei_remote_config
-issue_tracker: https://github.com/sinelser/huawei_remote_config/issues
+homepage: https://github.com/alexngo09092k/huawei_remote_config
+repository: https://github.com/alexngo09092k/huawei_remote_config
+issue_tracker: https://github.com/alexngo09092k/huawei_remote_config/issues
 
 environment:
   sdk: ^3.6.0
